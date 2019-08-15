@@ -3,7 +3,6 @@ package com.en.ws.repositories;
 import java.util.List;
 
 import com.en.ws.entities.Product;
-import com.en.ws.enums.CAT;
 
 public interface ProductRepository {
 	

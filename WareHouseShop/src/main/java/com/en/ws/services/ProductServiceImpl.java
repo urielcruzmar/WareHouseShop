@@ -3,7 +3,6 @@ package com.en.ws.services;
 import java.util.List;
 
 import com.en.ws.entities.Product;
-import com.en.ws.enums.CAT;
 import com.en.ws.repositories.ProductRepository;
 import com.en.ws.repositories.ProductRepositoryImpl;
 
