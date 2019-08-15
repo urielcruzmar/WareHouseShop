@@ -10,7 +10,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 import com.en.ws.entities.Product;
-import com.en.ws.enums.CAT;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -31,6 +30,7 @@ public class ProductRepositoryImpl implements ProductRepository {
 		
 		Boolean result = false;
 		Integer lastCode = 0;
+		Product lastProduct = null;
 		
 		if (product != null) {
 			
@@ -40,7 +40,8 @@ public class ProductRepositoryImpl implements ProductRepository {
 			if (search(new Product(null, product.getName(), null, null, null, null, null)).isEmpty()) {
 				
 				if (!allProducts.isEmpty()) {
-					lastCode = allProducts.size();
+					lastProduct = allProducts.get(allProducts.size()-1);
+					lastCode = lastProduct.getCode();
 				}
 				product.setCode(lastCode+1);
 				

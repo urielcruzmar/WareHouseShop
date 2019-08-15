@@ -35,6 +35,7 @@ public class Product {
 		this.price = price;
 		this.stock = stock;
 		this.category = category;
+		this.totalSells = 0;
 	}
 	
 	// Setters and Getters
