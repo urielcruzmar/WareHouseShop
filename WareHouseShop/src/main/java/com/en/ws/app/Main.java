@@ -66,8 +66,13 @@ public class Main {
 		}*/
 		
 		// DELETE
-		if (ps.delete(3)) {
+		/*if (ps.delete(3)) {
 			System.out.println("DELETED");
+		}*/
+		
+		// SELL
+		if (ps.sell(2, 30)) {	
+			System.out.println("MONEY");
 		}
 		
 	}

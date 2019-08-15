@@ -15,7 +15,8 @@
     "desc": "De calidad",
     "vat": "GENERAL",
     "price": 12.86,
-    "stock": 47,
+    "stock": 17,
+    "totalSells": 65,
     "category": "ALIMENTACION"
   },
   {
@@ -25,6 +26,7 @@
     "vat": "GENERAL",
     "price": 12.86,
     "stock": 47,
+    "totalSells": 35,
     "category": "ALIMENTACION"
   }
 ]

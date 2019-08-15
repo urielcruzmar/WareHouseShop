@@ -98,16 +98,17 @@ public class ProductRepositoryImpl implements ProductRepository {
 		
 		Boolean result = false;
 		List<Product> allProducts = new ArrayList<Product>(readAll());
-		Integer productPositionCode = 0;
 		
-		for (Product product : allProducts) {
+		Integer productPositionCode = getProductPosition(allProducts, code);
+		
+		/*for (Product product : allProducts) {
 			
 			if (code != null && product.getCode().equals(code)) {
 				break;
 			}
 			productPositionCode++;
 			
-		}
+		}*/
 		
 		if (productPositionCode != 0 && code <= allProducts.size()) {
 			allProducts.get(productPositionCode).setName(editedProduct.getName());
@@ -119,6 +120,7 @@ public class ProductRepositoryImpl implements ProductRepository {
 		
 	}
 
+	// Delete product
 	public boolean delete(Integer code) {
 		
 		Boolean result = false;
@@ -143,9 +145,25 @@ public class ProductRepositoryImpl implements ProductRepository {
 		
 	}
 
+	// Add sold items to product
 	public boolean sell(Integer code, Integer num) {
-		// TODO Auto-generated method stub
-		return false;
+		
+		Boolean result = false;
+		List<Product> allProducts = new ArrayList<Product>(readAll());
+		Integer productPositionCode = getProductPosition(allProducts, code);
+		
+		Integer currentStock = allProducts.get(productPositionCode).getStock();
+		Integer currentSells = allProducts.get(productPositionCode).getTotalSells();
+		
+		if (allProducts.get(productPositionCode).getStock() >= num) {
+			allProducts.get(productPositionCode).setStock(currentStock-num);
+			allProducts.get(productPositionCode).setTotalSells(currentSells+num);
+			saveJson(allProducts);
+			result = true;
+		}
+
+		return result;
+		
 	}
 
 	public void infoSells() {
@@ -216,6 +234,28 @@ public class ProductRepositoryImpl implements ProductRepository {
 			
 		}
 		
+	}
+	
+	/**
+	 * Get the position of the product in the list
+	 * @param allProducts
+	 * @param code
+	 * @return product position
+	 */
+	private Integer getProductPosition(List<Product> allProducts, Integer code) {
+		
+		Integer productPositionCode = 0;
+		
+		for (Product product : allProducts) {
+			
+			if (code != null && product.getCode().equals(code)) {
+				break;
+			}
+			productPositionCode++;
+			
+		}
+		
+		return productPositionCode;
 	}
 	
 }
