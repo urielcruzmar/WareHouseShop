@@ -20,6 +20,15 @@
   },
   {
     "code": 3,
+    "name": "Pizza barbacoa ULTRA PREMIUM",
+    "desc": "De calidad",
+    "vat": "GENERAL",
+    "price": 12.86,
+    "stock": 47,
+    "category": "ALIMENTACION"
+  },
+  {
+    "code": 4,
     "name": "Pizza barbacoa PREMIUM",
     "desc": "De calidad",
     "vat": "GENERAL",

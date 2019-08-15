@@ -93,9 +93,29 @@ public class ProductRepositoryImpl implements ProductRepository {
 		return filteredProducts;
 	}
 
+	// Modify product
 	public boolean modify(Integer code, Product editedProduct) {
-		// TODO Auto-generated method stub
-		return false;
+		
+		Boolean result = false;
+		List<Product> allProducts = new ArrayList<Product>(readAll());
+		Integer productPositionCode = 0;
+		
+		for (Product product : allProducts) {
+			
+			if (code != null && product.getCode().equals(code)) {
+				break;
+			}
+			productPositionCode++;
+			
+		}
+		
+		if (productPositionCode != 0 && code <= allProducts.size()) {
+			allProducts.get(productPositionCode).setName(editedProduct.getName());
+			saveJson(allProducts);
+			result = true;
+		}
+		
+		return result;
 	}
 
 	public boolean delete(Integer code) {

@@ -40,13 +40,13 @@ public class Main {
 		}
 		
 		// ADD PRODUCT
-		product = new Product(null, "Pizza barbacoa PREMIUM", "De calidad", VAT.GENERAL, 12.86, 47, CAT.ALIMENTACION);
+		/*product = new Product(null, "Pizza barbacoa PREMIUM", "De calidad", VAT.GENERAL, 12.86, 47, CAT.ALIMENTACION);
 		if (ps.create(product)) {
 			System.out.println("NICE");
 		}
 		else {
 			System.out.println("NOPE");
-		}
+		}*/
 		
 		// SEARCH
 		/*ps = new ProductServiceImpl();
@@ -59,7 +59,11 @@ public class Main {
 			System.out.println(p);
 		}*/
 		
-		
+		// MODIFY
+		/*boolean result = ps.modify(5, new Product(null, "Pizza barbacoa ULTRA PREMIUM", "De calidad", VAT.GENERAL, 12.86, 47, CAT.ALIMENTACION));
+		if (result) {
+			System.out.println("NICEU");
+		}*/
 		
 	}
 
