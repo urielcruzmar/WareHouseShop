@@ -65,6 +65,11 @@ public class Main {
 			System.out.println("NICEU");
 		}*/
 		
+		// DELETE
+		if (ps.delete(3)) {
+			System.out.println("DELETED");
+		}
+		
 	}
 
 }

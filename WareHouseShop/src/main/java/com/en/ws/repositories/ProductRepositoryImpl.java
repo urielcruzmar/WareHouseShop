@@ -116,11 +116,31 @@ public class ProductRepositoryImpl implements ProductRepository {
 		}
 		
 		return result;
+		
 	}
 
 	public boolean delete(Integer code) {
-		// TODO Auto-generated method stub
-		return false;
+		
+		Boolean result = false;
+		List<Product> allProducts = new ArrayList<Product>(readAll());
+		Product productToDelete = null;
+		
+		for (Product product : allProducts) {
+			
+			if (code != null && product.getCode().equals(code)) {
+				productToDelete = product;
+			}
+			
+		}
+		
+		if (productToDelete != null) {
+			allProducts.remove(productToDelete);
+			saveJson(allProducts);
+			result = true;
+		}
+		
+		return result;
+		
 	}
 
 	public boolean sell(Integer code, Integer num) {
