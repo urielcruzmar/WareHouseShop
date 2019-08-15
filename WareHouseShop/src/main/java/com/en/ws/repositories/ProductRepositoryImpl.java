@@ -29,15 +29,30 @@ public class ProductRepositoryImpl implements ProductRepository {
 	// Create one new product
 	public boolean create(Product product) {
 		
-		if (product == null) {
-			return false;
+		Boolean result = false;
+		Integer lastCode = 0;
+		
+		if (product != null) {
+			
+			List<Product> allProducts = new ArrayList<Product>(readAll());
+			
+			// Check if Product is not in the list
+			if (search(new Product(null, product.getName(), null, null, null, null, null)).isEmpty()) {
+				
+				if (!allProducts.isEmpty()) {
+					lastCode = allProducts.size();
+				}
+				product.setCode(lastCode+1);
+				
+				allProducts.add(product);
+				saveJson(allProducts);
+				result = true;
+				
+			}
+			
 		}
 		
-		List<Product> allProducts = new ArrayList<Product>(readAll());
-		allProducts.add(product);
-		saveJson(allProducts);
-		
-		return true;
+		return result;
 		
 	}
 	
@@ -72,6 +87,7 @@ public class ProductRepositoryImpl implements ProductRepository {
 			else if (filter.getCategory() != null && product.getCategory().equals(filter.getCategory())) {
 				filteredProducts.add(product);
 			}
+			
 		}
 		
 		return filteredProducts;

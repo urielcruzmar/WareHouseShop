@@ -40,8 +40,13 @@ public class Main {
 		}
 		
 		// ADD PRODUCT
-		/*product = new Product("Pizza barbacoa", "De calidad", VAT.GENERAL, 12.86, 47, CAT.ALIMENTACION);
-		ps.create(product);*/
+		product = new Product(null, "Pizza barbacoa PREMIUM", "De calidad", VAT.GENERAL, 12.86, 47, CAT.ALIMENTACION);
+		if (ps.create(product)) {
+			System.out.println("NICE");
+		}
+		else {
+			System.out.println("NOPE");
+		}
 		
 		// SEARCH
 		/*ps = new ProductServiceImpl();

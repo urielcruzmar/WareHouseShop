@@ -26,8 +26,9 @@ public class Product {
 	 * @param totalSells
 	 * @param category
 	 */
-	public Product(String name, String desc, VAT vat, Double price, Integer stock, CAT category) {
+	public Product(Integer code, String name, String desc, VAT vat, Double price, Integer stock, CAT category) {
 		super();
+		this.code = code;
 		this.name = name;
 		this.desc = desc;
 		this.vat = vat;
