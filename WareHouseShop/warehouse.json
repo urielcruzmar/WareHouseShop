@@ -1,0 +1,21 @@
+[
+  {
+    "code": 1,
+    "name": "Pizza 4 quesos",
+    "desc": "rica",
+    "vat": "SUPERREDUCTED",
+    "price": 4.39,
+    "stock": 24,
+    "totalSells": 35,
+    "category": "ALIMENTACION"
+  },
+  {
+    "code": 2,
+    "name": "Pizza barbacoa",
+    "desc": "De calidad",
+    "vat": "GENERAL",
+    "price": 12.86,
+    "stock": 47,
+    "category": "ALIMENTACION"
+  }
+]
