@@ -56,19 +56,33 @@ public class Main {
 				case 4:
 					if (ps.modify(Menu.askForCode(), Menu.addProductMenu())) {
 						System.out.println("Producto modificado");
+					} else {
+						System.err.println("No se ha modificado el producto");
 					}
 					break;
 					
 				// Delete
 				case 5:
+					if (ps.delete(Menu.askForCode())) {
+						System.out.println("Producto eliminado");
+					} else {
+						System.err.println("No se ha eliminado el producto");
+					}
 					break;
 					
 				// Sell
 				case 6:
+					if (ps.sell(Menu.askForCode(), Menu.askForSells())) {
+						System.out.println("Ventas añadidas");
+					} else {
+						System.err.println("Se ha producido un error al añadir las ventas\n"
+								+ "Comprueba que el stock sea suficiente");
+					}
 					break;
 				
 				// Summary
 				case 7:
+					System.out.println("EN DESARROLLO");
 					break;
 					
 			}

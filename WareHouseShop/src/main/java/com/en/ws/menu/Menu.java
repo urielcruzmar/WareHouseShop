@@ -236,5 +236,31 @@ public class Menu {
 		}
 		return category;
 	}
+
+	/**
+	 * Ask the user for the number of products that were sold
+	 * @return number of sold products
+	 */
+	public static Integer askForSells() {
+		
+		Integer numberProductsSold = 0;
+		
+		// Stock
+		while(numberProductsSold <= 0) {
+			System.out.print("Introduce el número de productos vendidos: ");
+			try {
+				numberProductsSold = Integer.parseInt(scan.nextLine());
+				if (numberProductsSold < 0) {
+					Exception r = new RuntimeException("Out of range");
+			        throw new RuntimeException("Invalid option", r);
+				}
+			} catch (Exception e) {
+				System.err.println("Número inválido");
+				numberProductsSold = 0;
+			}
+		}
+		
+		return numberProductsSold;
+	}
 	
 }
