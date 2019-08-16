@@ -129,9 +129,7 @@ public class Menu {
 		// Category
 		category = askForCategory();
 
-		Product product = new Product(null, name, description, vat, price, stock, category);
-
-		return product;
+		return new Product(null, name, description, vat, price, stock, category);
 		
 	}
 	
@@ -175,6 +173,26 @@ public class Menu {
 		}
 		
 		return product;
+		
+	}
+	
+	/**
+	 * Ask the user for the product code
+	 * @return product
+	 */
+	public static Integer askForCode() {
+		
+		Integer code = null;
+		
+		try {
+			System.out.println("Codigo del producto:");
+			code = Integer.parseInt(scan.nextLine());
+		} catch (Exception e) {
+			System.out.println("Codigo invalido");
+		}
+		
+		return code;
+		
 	}
 	
 	/**

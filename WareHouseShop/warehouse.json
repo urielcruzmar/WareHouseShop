@@ -21,11 +21,11 @@
   },
   {
     "code": 4,
-    "name": "Pizza barbacoa PREMIUM",
-    "desc": "De calidad",
-    "vat": "GENERAL",
-    "price": 12.86,
-    "stock": 47,
+    "name": "Pizza PICANTE",
+    "desc": "Buttoni",
+    "vat": "SUPERREDUCTED",
+    "price": 12.0,
+    "stock": 42,
     "totalSells": 35,
     "category": "ALIMENTACION"
   }

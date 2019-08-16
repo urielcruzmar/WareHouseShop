@@ -102,19 +102,17 @@ public class ProductRepositoryImpl implements ProductRepository {
 		
 		Integer productPositionCode = getProductPosition(allProducts, code);
 		
-		/*for (Product product : allProducts) {
-			
-			if (code != null && product.getCode().equals(code)) {
-				break;
-			}
-			productPositionCode++;
-			
-		}*/
-		
-		if (productPositionCode != 0 && code <= allProducts.size()) {
+		try {
 			allProducts.get(productPositionCode).setName(editedProduct.getName());
+			allProducts.get(productPositionCode).setDesc(editedProduct.getDesc());
+			allProducts.get(productPositionCode).setVat(editedProduct.getVat());
+			allProducts.get(productPositionCode).setPrice(editedProduct.getPrice());
+			allProducts.get(productPositionCode).setStock(editedProduct.getStock());
+			allProducts.get(productPositionCode).setCategory(editedProduct.getCategory());			
 			saveJson(allProducts);
 			result = true;
+		} catch (Exception e) {
+			
 		}
 		
 		return result;

@@ -54,6 +54,9 @@ public class Main {
 				
 				// Modify
 				case 4:
+					if (ps.modify(Menu.askForCode(), Menu.addProductMenu())) {
+						System.out.println("Producto modificado");
+					}
 					break;
 					
 				// Delete
